@@ -1,50 +1,55 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
-
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     randomDogs: [],
-    dogBreed: []
-
+    dogBreed: [],
   },
-  getters: {
-  },
+  getters: {},
   mutations: {
-    SET_RANDOM_DOGS (state, payload) {
-      state.randomDogs = payload
-      
+    SET_RANDOM_DOGS(state, payload) {
+      state.randomDogs = payload;
     },
-    SET_DOG_BREED (state, payload) {
-      state.dogBreed = payload
-    }
+    SET_DOG_BREED(state, payload) {
+      state.dogBreed = payload;
+    },
   },
   actions: {
     getRandomDogs({ commit }) {
-      fetch('https://dog.ceo/api/breeds/image/random/10').
-     // then(checkStatus).
-      then(response => response.json()).
-      then(data => {
-        console.log(data.message)
-        
-        commit('SET_RANDOM_DOGS', data.message)
+      fetch("https://dog.ceo/api/breeds/image/random/10")
+        // then(checkStatus).
+        .then((response) => response.json())
+        .then((data) => {
+          //console.log(data.message)
 
-        let dogBreed = []
+          commit("SET_RANDOM_DOGS", data.message);
 
-        data.message.forEach(dog1 => {
-        
-          let x = dog1.split('/')
-          dogBreed.push(x[4])
+          let dogBreed = [];
 
-        })
+          data.message.forEach((dog1) => {
+            let x = dog1.split("/");
+            dogBreed.push(x[4]);
+          });
 
-          commit('SET_DOG_BREED', dogBreed)
+          commit("SET_DOG_BREED", dogBreed);
+        });
+    },
 
-       })
-    }
+    getDogList() {
+      fetch(
+        'https://dog.ceo/api/breeds/list/all'
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          
+         console.log(data)
+     })
+     
+
+     }
   },
-  modules: {
-  }
-})
+  modules: {},
+});

@@ -6,12 +6,13 @@
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Dog Filter</v-toolbar-title>
+      <v-toolbar-title>Rondom Dogs</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
       <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
+        <v-icon>mdi-heart</v-icon>
+        
       </v-btn>
     </v-app-bar>
 
