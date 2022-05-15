@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     randomDogs: [],
     dogBreed: [],
+    dogList: []
   },
   getters: {},
   mutations: {
@@ -16,6 +17,9 @@ export default new Vuex.Store({
     SET_DOG_BREED(state, payload) {
       state.dogBreed = payload;
     },
+    SET_DOG_LIST(state, payload) {
+      state.dogList = payload;
+    }
   },
   actions: {
     getRandomDogs({ commit }) {
@@ -37,19 +41,24 @@ export default new Vuex.Store({
           commit("SET_DOG_BREED", dogBreed);
         });
     },
-
-    getDogList() {
-      fetch(
-        'https://dog.ceo/api/breeds/list/all'
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          
-         console.log(data)
-     })
-     
-
-     }
+   
+      getDogList() {
+        fetch("https://dog.ceo/api/breeds/list/all")
+          // then(checkStatus).
+          .then((response) => response.json())
+          .then((data) => {
+            
+            
+            let dogList = []
+            
+            Object.keys(data.message).forEach(key => {
+              dogList.push(key)              
+            });
+              
+              this.commit('SET_DOG_LIST', dogList)
+ 
+          });
+      },
   },
   modules: {},
 });

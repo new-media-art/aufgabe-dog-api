@@ -1,7 +1,8 @@
 <template>
 <div>
+   <dogs-breed />
   <dog-gallery />
-  <dogs-breed />
+ 
 </div>
 </template>
 
