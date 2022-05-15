@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     randomDogs: [],
     dogBreed: [],
-    dogList: []
+    dogList: [],
+    oneBreed: []
   },
   getters: {},
   mutations: {
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     },
     SET_DOG_LIST(state, payload) {
       state.dogList = payload;
+    },
+    SET_ONE_BREED(state, payload) {
+      state.oneBreed = payload;
     }
   },
   actions: {
@@ -59,6 +63,17 @@ export default new Vuex.Store({
  
           });
       },
+      selectDogBreed({ commit }, e) {
+        
+        let url = `https://dog.ceo/api/breed/${e}/images`;
+        fetch(url)
+        .then(response => response.json())
+        .then((data) => {
+          console.log(data.message)
+          commit("SET_ONE_BREED", data.message);
+        })
+        
+      }
   },
   modules: {},
 });

@@ -11,7 +11,7 @@
         sm="6"
       >
         <v-select
-           v-model="selectedBreed"
+          
           :items ="$store.state.dogList"
           filled
           label="Find Dog Breed"
@@ -33,7 +33,7 @@ export default {
   name: "DogBreed",
 
   data: () => ({
-      selectBreed: ''
+     
       
   }),
   
@@ -41,8 +41,12 @@ export default {
     getDogList() {
       this.$store.dispatch("getDogList");
     },
-    selectDogBreed(e) {
-        console.log(e)
+    selectDogBreed(e) { 
+        
+        this.$store.dispatch('selectDogBreed', 
+            e
+        )
+        this.$store.dispatch('selectDogBreed')
     }
     
   },
