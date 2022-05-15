@@ -11,9 +11,11 @@
         sm="6"
       >
         <v-select
-          :items="$store.state.dogList"
+           v-model="selectedBreed"
+          :items ="$store.state.dogList"
           filled
           label="Find Dog Breed"
+          @change = "selectDogBreed"
         ></v-select>
       </v-col>
 
@@ -25,13 +27,13 @@
 </template>
 
 
-<!--@click="selectBreed($event)"-->
+
 <script>
 export default {
   name: "DogBreed",
 
   data: () => ({
-      key: ""
+      selectBreed: ''
       
   }),
   
@@ -39,12 +41,13 @@ export default {
     getDogList() {
       this.$store.dispatch("getDogList");
     },
+    selectDogBreed(e) {
+        console.log(e)
+    }
+    
   },
   mounted() {
     this.getDogList();
-  },
-  selectBreed(event) {
-            console.log(event.target.value)
-        }
+  }
 };
 </script>
