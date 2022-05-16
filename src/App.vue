@@ -4,12 +4,18 @@
       app
       shrink-on-scroll  
     >
-    <v-btn class="mt-4">
-      <v-icon>mdi-home</v-icon>
+    <v-btn 
+    class="mt-4">
+      <v-icon>
+        mdi-home
+        </v-icon>
     </v-btn>
       
 
-      <v-toolbar-title class="font-weight-bold black accent-4 white--text">95Dogs</v-toolbar-title>
+      <v-toolbar-title 
+      class="font-weight-bold black accent-4 white--text pa-2">
+      95Dogs
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
       
