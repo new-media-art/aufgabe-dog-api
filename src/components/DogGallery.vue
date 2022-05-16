@@ -21,7 +21,7 @@
               <v-spacer></v-spacer>
 
               <v-btn icon>
-                <v-icon @click="addToFavourites(dog)">mdi-heart</v-icon>
+                <v-icon @click="addToFavorites(dog)">mdi-heart</v-icon>
               </v-btn>
 
             </v-card-actions>
@@ -43,8 +43,8 @@ export default {
     fetchDogs() {
       this.$store.dispatch('getRandomDogs')
     },
-    addToFavourites (dog) {
-      this.$store.dispatch('addToFavourites',  dog )
+    addToFavorites (dog) {
+      this.$store.dispatch('addToFavorites',  dog )
     },
   },
   mounted () {

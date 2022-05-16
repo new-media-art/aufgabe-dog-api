@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 
-const STORAGE_KEY = 'favourites';
+const STORAGE_KEY = 'favorites';
 
 Vue.use(Vuex);
 
@@ -109,20 +109,14 @@ export default new Vuex.Store({
         
       },
      
-    addToFavourites ({ commit }, dog) {
+    addToFavorites ({ commit }, dog) {
       
       commit('ADD_TO_FAVORITES', dog)
     },
-    getFavourites ({ commit }) {
+    favoriteDogs ({ commit }) {
       commit('GET_FAVORITES')
     },
-    /*
     
-    
-    
-    removeFromFavourites ({ commit }, image) {
-      this.commit('REMOVE_FROM_FAVOURITES', image.src)
-    },*/
   },
   modules: {},
 });

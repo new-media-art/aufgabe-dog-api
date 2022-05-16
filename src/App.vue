@@ -1,18 +1,21 @@
 <template>
-  <v-app id="inspire">
+  <v-app>
     <v-app-bar
       app
-      shrink-on-scroll
+      shrink-on-scroll  
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-btn class="mt-4">
+      <v-icon>mdi-home</v-icon>
+    </v-btn>
+      
 
-      <v-toolbar-title>95 Dog Breeds!</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold black accent-4 white--text">95Dogs</v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <v-btn icon>
+      
+      <v-btn class="mt-4">
+        <h4 class="pa-2">My favorite Dogs</h4>
         <v-icon>mdi-heart</v-icon>
-        
       </v-btn>
     </v-app-bar>
 

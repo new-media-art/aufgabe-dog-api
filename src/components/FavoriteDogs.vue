@@ -20,8 +20,11 @@
             <v-card-actions>
               <v-spacer></v-spacer>
 
-              <v-btn>
-              remove
+              <v-btn icon>
+                  <v-icon>
+                     mdi-heart-broken 
+                  </v-icon>
+              
            <!--   @click="removeFavourite(image)" -->
               </v-btn>
 
@@ -41,16 +44,18 @@
 export default {
   name: 'FavouriteDogs',
   computed: {
-    getFavorites () {
+     getFavorites () {
       return this.$store.getters.getFavorites
     }
   },
     
   methods: {
-    
+  
   
   },
-  
+  mounted() {
+    
+  }
  
   
   }
