@@ -2,6 +2,7 @@
  
   <template>
   <v-container fluid>
+    <h2>Filter Dogs by breed</h2>
     <v-row align="center">
       
 

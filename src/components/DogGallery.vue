@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <h1>Random dogs</h1>
     <v-row>
       <v-col 
       v-for="(dog, index) in $store.state.randomDogs" 
@@ -20,7 +21,7 @@
               <v-spacer></v-spacer>
 
               <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
+                <v-icon @click="addToFavourites(dog)">mdi-heart</v-icon>
               </v-btn>
 
             </v-card-actions>
@@ -40,11 +41,13 @@ export default {
   methods: {
     fetchDogs() {
       this.$store.dispatch('getRandomDogs')
-    }
+    },
+    addToFavourites (dog) {
+      this.$store.dispatch('addToFavourites',  dog )
+    },
   },
   mounted () {
     this.fetchDogs()
-    
   }
   
 };

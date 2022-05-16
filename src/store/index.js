@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+
+const STORAGE_KEY = 'favourites';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -9,7 +12,8 @@ export default new Vuex.Store({
     dogBreed: [],
     dogList: [],
     oneBreed: [],
-    oneBreedName: [] 
+    oneBreedName: [],
+    favorites: [] 
   },
   getters: {},
   mutations: {
@@ -28,7 +32,14 @@ export default new Vuex.Store({
     },
     SET_ONE_BREED_NAME(state, payload) {
       state.oneBreedName = payload;
-    }
+    },
+    ADD_TO_FAVOURITES (state, payload) {
+      console.log('payload' + payload)
+      
+      state.favorites.push(payload)
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state.favorites))
+      
+    },
   },
   actions: {
     getRandomDogs({ commit }) {
@@ -86,9 +97,22 @@ export default new Vuex.Store({
           
           this.commit("SET_ONE_BREED_NAME", oneBreedName);
 
-        })
+        });
         
-      }
+      },
+     
+    addToFavourites ({ commit }, dog) {
+      
+      commit('ADD_TO_FAVOURITES', dog)
+    },/*
+    
+    getFavourites ({ commit }) {
+      this.commit('GET_FAVOURITES')
+    },
+    
+    removeFromFavourites ({ commit }, image) {
+      this.commit('REMOVE_FROM_FAVOURITES', image.src)
+    },*/
   },
   modules: {},
 });

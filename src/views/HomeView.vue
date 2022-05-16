@@ -1,8 +1,10 @@
 <template>
 <div>
-   <dogs-breed />
+  
   <dog-gallery />
+   <dogs-breed />
   <one-breed />
+  <favorite-dogs />
   
  
 </div>
@@ -12,6 +14,7 @@
 import DogGallery from "../components/DogGallery";
 import DogsBreed from "../components/DogsBreed.vue"
 import OneBreed from "../components/OneBreed.vue"
+import FavoriteDogs from "../components/FavoriteDogs.vue"
 
 export default {
   name: "HomeView",
@@ -20,7 +23,8 @@ export default {
     
     DogGallery,
     DogsBreed,
-    OneBreed
+    OneBreed,
+    FavoriteDogs
     
   },
 };

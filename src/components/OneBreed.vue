@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    
     <v-row>
       <v-col 
       v-for="(dog, index) in $store.state.oneBreed" 
@@ -20,7 +21,7 @@
               <v-spacer></v-spacer>
 
               <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
+                <v-icon @click="addToFavourites(dog)">mdi-heart</v-icon>
               </v-btn>
 
             </v-card-actions>
@@ -38,7 +39,9 @@ export default {
 
   }),
   methods: {
-    
+    addToFavourites (dog) {
+      this.$store.dispatch('addToFavourites',  dog )
+    },
   },
   mounted () {
     
