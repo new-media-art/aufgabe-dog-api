@@ -1,8 +1,12 @@
 
  
   <template>
-  <v-container fluid>
-    <h2>Filter Dogs by breed</h2>
+ <v-container>
+ <v-card
+  class="d-flex justify-center"
+  >
+  <v-flex></v-flex>
+     <h2 class="mr-4">Filter Dogs by breed</h2>
     <v-row align="center">
       
 
@@ -24,7 +28,12 @@
 
       
     </v-row>
-  </v-container>
+  </v-card>
+   
+ </v-container>
+
+ 
+
 </template>
 
 

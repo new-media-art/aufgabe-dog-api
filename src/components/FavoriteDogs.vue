@@ -11,7 +11,7 @@
               :src="dog"
               class="white--text align-end"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
+              height="300px"
             >
              
              
@@ -22,7 +22,7 @@
 
               <v-btn icon>
                   <v-icon>
-                     mdi-heart-broken 
+                    X
                   </v-icon>
               
            <!--   @click="removeFavourite(image)" -->

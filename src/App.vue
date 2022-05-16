@@ -2,9 +2,12 @@
   <v-app>
     <v-app-bar
       app
-      shrink-on-scroll  
+      shrink-on-scroll
+      color="black"
+        
     >
     <v-btn 
+    small
     class="mt-4">
       <v-icon>
         mdi-home
@@ -13,14 +16,15 @@
       
 
       <v-toolbar-title 
-      class="font-weight-bold black accent-4 white--text pa-2">
+      id="dogsTitle"
+      class="font-weight-bold  accent-4 white--text pa-2">
       95Dogs
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
       
-      <v-btn class="mt-4">
-        <h4 class="pa-2">My favorite Dogs</h4>
+      <v-btn class="ma-10">
+        <h4 class="pa-6 ">My favorite Dogs</h4>
         <v-icon>mdi-heart</v-icon>
       </v-btn>
     </v-app-bar>
@@ -43,3 +47,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+#dogsTitle {
+  margin-left: 42%;
+}
+</style>

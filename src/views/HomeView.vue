@@ -1,9 +1,8 @@
 <template>
 <div>
-  
+  <dogs-breed />
+   <one-breed />
   <dog-gallery />
-   <dogs-breed />
-  <one-breed />
   <favorite-dogs />
   
  

@@ -5,13 +5,13 @@
       <v-col 
       v-for="(dog, index) in $store.state.oneBreed" 
       :key="index" 
-      cols="4">
+      cols="3">
       <v-card>
            <v-img
               :src="dog"
               class="white--text align-end"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-              height="200px"
+              height="300px"
             >
              <v-card-title class="text-uppercase">{{ $store.state.oneBreedName[index] }} </v-card-title>
              
