@@ -12,7 +12,7 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="200px"
             >
-             <v-card-title class="text-uppercase">{{ $store.state.oneBreed }} </v-card-title>
+             <v-card-title class="text-uppercase">{{ $store.state.oneBreedName[index] }} </v-card-title>
             </v-img>
 
             <v-card-actions>
@@ -37,10 +37,10 @@ export default {
 
   }),
   methods: {
-   
+    
   },
   mounted () {
-    this.selectDogBreed()
+    
     
   }
   

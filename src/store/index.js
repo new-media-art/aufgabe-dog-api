@@ -8,7 +8,8 @@ export default new Vuex.Store({
     randomDogs: [],
     dogBreed: [],
     dogList: [],
-    oneBreed: []
+    oneBreed: [],
+   /* oneBreedName: [] */
   },
   getters: {},
   mutations: {
@@ -23,7 +24,11 @@ export default new Vuex.Store({
     },
     SET_ONE_BREED(state, payload) {
       state.oneBreed = payload;
-    }
+      console.log("payload" + payload)
+    },/*
+    SET_ONE_BREED_NAME(state, payload) {
+      state.oneBreedName = payload;
+    }*/
   },
   actions: {
     getRandomDogs({ commit }) {
@@ -48,7 +53,7 @@ export default new Vuex.Store({
    
       getDogList() {
         fetch("https://dog.ceo/api/breeds/list/all")
-          // then(checkStatus).
+          
           .then((response) => response.json())
           .then((data) => {
             
@@ -65,12 +70,22 @@ export default new Vuex.Store({
       },
       selectDogBreed({ commit }, e) {
         
-        let url = `https://dog.ceo/api/breed/${e}/images`;
+        let url = 'https://dog.ceo/api/breed/' +  e + '/images';
         fetch(url)
         .then(response => response.json())
         .then((data) => {
-          console.log(data.message)
+         // console.log(data.message)
           commit("SET_ONE_BREED", data.message);
+/*
+          let oneBreed = [];
+
+          data.message.forEach((dog) => {
+            let x = dog.split("/");
+            oneBreed.push(x[4]);
+          });
+          console.log(oneBreed)
+          commit("SET_ONE_BREED_NAME", oneBreed);*/
+
         })
         
       }
