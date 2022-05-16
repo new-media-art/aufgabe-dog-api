@@ -38,6 +38,7 @@ export default {
   data: () => ({
 
   }),
+   
   methods: {
     fetchDogs() {
       this.$store.dispatch('getRandomDogs')

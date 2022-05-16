@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>My Favourite Dogs!</h1>
+    <h1>My Favourite Dogs!  </h1>
          <v-row>
       <v-col 
-      v-for="(dog, index) in $store.state.favorites" 
+      v-for="(dog, index) in getFavorites" 
       :key="index" 
       cols="4">
       <v-card>
@@ -40,10 +40,15 @@
 <script>
 export default {
   name: 'FavouriteDogs',
-  
+  computed: {
+    getFavorites () {
+      return this.$store.getters.getFavorites
+    }
+  },
+    
   methods: {
     
-   
+  
   },
   
  

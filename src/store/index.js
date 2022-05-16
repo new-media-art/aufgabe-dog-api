@@ -15,7 +15,11 @@ export default new Vuex.Store({
     oneBreedName: [],
     favorites: [] 
   },
-  getters: {},
+  getters: {
+    getFavorites(state) {
+      return state.favorites
+    }
+  },
   mutations: {
     SET_RANDOM_DOGS(state, payload) {
       state.randomDogs = payload;
@@ -33,18 +37,22 @@ export default new Vuex.Store({
     SET_ONE_BREED_NAME(state, payload) {
       state.oneBreedName = payload;
     },
-    ADD_TO_FAVOURITES (state, payload) {
+    ADD_TO_FAVORITES (state, payload) {
       console.log('payload' + payload)
       
       state.favorites.push(payload)
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.favorites))
       
     },
+      GET_FAVORITES (state) {
+      state.favorites = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+    },
+    
   },
   actions: {
     getRandomDogs({ commit }) {
       fetch("https://dog.ceo/api/breeds/image/random/10")
-        // then(checkStatus).
+        
         .then((response) => response.json())
         .then((data) => {
         
@@ -103,12 +111,14 @@ export default new Vuex.Store({
      
     addToFavourites ({ commit }, dog) {
       
-      commit('ADD_TO_FAVOURITES', dog)
-    },/*
-    
-    getFavourites ({ commit }) {
-      this.commit('GET_FAVOURITES')
+      commit('ADD_TO_FAVORITES', dog)
     },
+    getFavourites ({ commit }) {
+      commit('GET_FAVORITES')
+    },
+    /*
+    
+    
     
     removeFromFavourites ({ commit }, image) {
       this.commit('REMOVE_FROM_FAVOURITES', image.src)
