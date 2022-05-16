@@ -2,7 +2,6 @@
   <v-app>
     <v-app-bar
       app
-      shrink-on-scroll
       color="black"
         
     >
@@ -24,7 +23,10 @@
       <v-spacer></v-spacer>
       
       <v-btn class="ma-10">
-        <h4 class="pa-6 ">My favorite Dogs</h4>
+<router-link to="/favorites" class="nav-link">
+  <h4 class="pa-6 ">My favorite Dogs</h4>      
+</router-link>
+        
         <v-icon>mdi-heart</v-icon>
       </v-btn>
     </v-app-bar>
