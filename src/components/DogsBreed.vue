@@ -46,7 +46,7 @@ export default {
         this.$store.dispatch('selectDogBreed', 
             e
         )
-        this.$store.dispatch('selectDogBreed')
+       
     }
     
   },

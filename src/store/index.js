@@ -9,7 +9,7 @@ export default new Vuex.Store({
     dogBreed: [],
     dogList: [],
     oneBreed: [],
-   /* oneBreedName: [] */
+    oneBreedName: [] 
   },
   getters: {},
   mutations: {
@@ -22,13 +22,13 @@ export default new Vuex.Store({
     SET_DOG_LIST(state, payload) {
       state.dogList = payload;
     },
-    SET_ONE_BREED(state, payload) {
+    SET_ONE_BREED (state, payload) {
       state.oneBreed = payload;
-      console.log("payload" + payload)
-    },/*
+      
+    },
     SET_ONE_BREED_NAME(state, payload) {
       state.oneBreedName = payload;
-    }*/
+    }
   },
   actions: {
     getRandomDogs({ commit }) {
@@ -36,7 +36,7 @@ export default new Vuex.Store({
         // then(checkStatus).
         .then((response) => response.json())
         .then((data) => {
-          //console.log(data.message)
+        
 
           commit("SET_RANDOM_DOGS", data.message);
 
@@ -47,7 +47,7 @@ export default new Vuex.Store({
             dogBreed.push(x[4]);
           });
 
-          commit("SET_DOG_BREED", dogBreed);
+          this.commit("SET_DOG_BREED", dogBreed);
         });
     },
    
@@ -68,23 +68,23 @@ export default new Vuex.Store({
  
           });
       },
-      selectDogBreed({ commit }, e) {
+      selectDogBreed({commit}, e) {
         
-        let url = 'https://dog.ceo/api/breed/' +  e + '/images';
+        let url = 'https://dog.ceo/api/breed/' +  e + '/images/random/3';
         fetch(url)
         .then(response => response.json())
         .then((data) => {
-         // console.log(data.message)
-          commit("SET_ONE_BREED", data.message);
-/*
-          let oneBreed = [];
+         
+         commit("SET_ONE_BREED", data.message);
+
+          let oneBreedName = [];
 
           data.message.forEach((dog) => {
             let x = dog.split("/");
-            oneBreed.push(x[4]);
+            oneBreedName.push(x[4]);
           });
-          console.log(oneBreed)
-          commit("SET_ONE_BREED_NAME", oneBreed);*/
+          
+          this.commit("SET_ONE_BREED_NAME", oneBreedName);
 
         })
         

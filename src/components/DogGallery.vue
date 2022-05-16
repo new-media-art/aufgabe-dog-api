@@ -13,6 +13,7 @@
               height="200px"
             >
              <v-card-title class="text-uppercase">{{ $store.state.dogBreed[index] }} </v-card-title>
+             
             </v-img>
 
             <v-card-actions>
