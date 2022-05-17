@@ -5,21 +5,33 @@
     <v-main>
       <router-view />
     </v-main>
+   
   </v-app>
 </template>
 
 <script>
 import AppBar from "./components/AppBar.vue";
 
+
+
 export default {
   name: "App",
   components: {
     AppBar,
+    
   },
-
-  data: () => ({
-    //
-  }),
+data () {
+    return {
+      currentPage: 1,
+    };
+  },
+  methods: {
+    onPageChange(page) {
+      console.log(page)
+      this.currentPage = page;
+    }
+  },
+ 
 
   beforeCreate() {
     this.$store.dispatch("favoriteDogs");

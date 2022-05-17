@@ -12,13 +12,15 @@ import DogGallery from "../components/DogGallery";
 import DogsBreed from "../components/DogsBreed.vue"
 
 
+
 export default {
   name: "HomeView",
 
   components: {
    
    DogsBreed,
-    DogGallery
+    DogGallery,
+    
     
     
     
