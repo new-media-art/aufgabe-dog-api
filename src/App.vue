@@ -27,6 +27,6 @@ export default {
 
 <style>
 #dogsTitle {
-  margin-left: 42%;
+  margin-left: 33%;
 }
 </style>

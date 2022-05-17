@@ -3,7 +3,7 @@
   <template>
  <v-container>
  <v-card
-  class="d-flex justify-center"
+ class="pa-2"
   >
   <v-flex></v-flex>
      <h2 class="mr-4">Filter Dogs by breed</h2>
@@ -25,8 +25,18 @@
       </v-col>
 
      
-
+<v-spacer></v-spacer>
       
+   
+      <v-col>
+            <v-btn class="ma-2">
+            <router-link to="/favorites" class="nav-link">
+              <h4 class="pa-16">My favorite Dogs</h4>      
+            </router-link>
+        
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+      </v-col>
     </v-row>
   </v-card>
    

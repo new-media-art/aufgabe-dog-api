@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>My Favourite Dogs!  </h1>
+    <v-container>
+      <h1>My Favourite Dogs!  </h1>
          <v-row>
       <v-col 
       v-for="(dog, index) in getFavorites" 
@@ -34,6 +35,8 @@
           
       </v-col>
     </v-row>
+    </v-container>
+    
    
   </div>
 </template>
