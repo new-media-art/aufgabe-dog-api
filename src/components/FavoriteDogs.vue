@@ -47,13 +47,13 @@
 export default {
   name: 'FavouriteDogs',
   computed: {
-     getFavorites () {
+    getFavorites () {
       return this.$store.getters.getFavorites
-    }
   },
     
   methods: {
-  
+   
+    }
   
   },
   mounted() {

@@ -22,6 +22,10 @@ export default {
   data: () => ({
     //
   }),
+  
+  beforeCreate () {
+    this.$store.dispatch('getFavorites')
+  }
 };
 </script>
 

@@ -113,7 +113,7 @@ export default new Vuex.Store({
       
       commit('ADD_TO_FAVORITES', dog)
     },
-    favoriteDogs ({ commit }) {
+    getFavorites ({ commit }) {
       commit('GET_FAVORITES')
     },
     

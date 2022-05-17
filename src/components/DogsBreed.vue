@@ -6,7 +6,7 @@
  class="pa-2"
   >
   <v-flex></v-flex>
-     <h2 class="mr-4">Filter Dogs by breed</h2>
+     <h2 class="mr-4">What dogs do you like?</h2>
     <v-row align="center">
       
 
@@ -19,7 +19,7 @@
           
           :items ="$store.state.dogList"
           filled
-          label="Find Dog Breed"
+          label="Filter Dogs by breed"
           @change = "selectDogBreed"
         ></v-select>
       </v-col>
@@ -29,7 +29,7 @@
       
    
       <v-col>
-            <v-btn class="ma-2">
+            <v-btn class="ma-2 yellow">
             <router-link to="/favorites" class="nav-link">
               <h4 class="pa-16">My favorite Dogs</h4>      
             </router-link>
