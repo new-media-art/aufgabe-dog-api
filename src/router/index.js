@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import FavoriteDogs from '../components/FavoriteDogs.vue'
+import OneBreed from '../components/OneBreed.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/favorites',
     name: 'favorites',
     component: FavoriteDogs
+  },
+  {
+    path: '/oneBreed',
+    name: 'oneBreed',
+    component: OneBreed
   }
 ]
 

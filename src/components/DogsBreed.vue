@@ -53,9 +53,13 @@ export default {
     },
     selectDogBreed(e) { 
         
-        this.$store.dispatch('selectDogBreed', 
-            e
-        )
+        this.$store.dispatch('selectDogBreed',  e)
+
+        .then(() => {
+          this.$router.push('/OneBreed')
+        })
+
+
        
     }
     
