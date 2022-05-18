@@ -77,7 +77,7 @@ export default new Vuex.Store({
         });
     },
     selectDogBreed({ commit }, e) {
-      let url = "https://dog.ceo/api/breed/" + e + "/images/random/8";
+      let url = "https://dog.ceo/api/breed/" + e + "/images/random/12";
       fetch(url)
         .then((response) => response.json())
         .then((data) => {

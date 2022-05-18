@@ -22,7 +22,7 @@
                 value= "25"
               ></v-radio>
               <v-radio
-                label="blue"
+                label="50 Dogs"
                 color="green"
                 value="50"
               ></v-radio>
@@ -96,19 +96,17 @@ export default {
       this.$store.dispatch('addToFavorites',  dog )
     },
     numberOfDogs() {
-      if (this.numDog === "infinite") {
-        return   this.$store.state.randomDogs
+      
+      if (this.numDog === "25") {
+        return   this.$store.state.randomDogs.slice(0, 25)
       }
+      
       else if (this.numDog === "50") {
         return   this.$store.state.randomDogs.slice(0, 50)
       }
-      else if (this.numDog === "25") {
-        return   this.$store.state.randomDogs.slice(0, 25)
+      if (this.numDog === "infinite") {
+        return   this.$store.state.randomDogs.slice(0, 120)
       }
-    else {
-      return this.$store.state.randomDogs
-    }
-      
       
     }
   },
