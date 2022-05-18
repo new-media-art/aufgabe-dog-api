@@ -47,7 +47,7 @@ export default new Vuex.Store({
   },
   actions: {
     getRandomDogs({ commit }) {
-      fetch("https://dog.ceo/api/breeds/image/random/20")
+      fetch("https://dog.ceo/api/breeds/image/random/100")
         .then((response) => response.json())
         .then((data) => {
           commit("SET_RANDOM_DOGS", data.message);
@@ -77,7 +77,7 @@ export default new Vuex.Store({
         });
     },
     selectDogBreed({ commit }, e) {
-      let url = "https://dog.ceo/api/breed/" + e + "/images/random/8";
+      let url = "https://dog.ceo/api/breed/" + e + "/images/random/12";
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
