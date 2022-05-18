@@ -1,12 +1,20 @@
 <template>
-  <v-container>
+<div>
+
+
+
+  <v-container  
+  
+  >
     <h1>Random dogs</h1>
 <!--radio-->
 
   <v-card flat>
     <v-card-text>
       <v-container fluid>
-        <v-row>
+        <v-row
+         
+        >
           <v-col
             cols="12"
             sm="6"
@@ -43,12 +51,16 @@
 
 
 
-    <v-row>
+    <v-row
+   
+    >
       <v-col 
       v-for="(dog, index) in numDogs" 
       :key="index" 
       cols="3">
-      <v-card>
+      <v-card
+      
+      >
            <v-img
               :src="dog"
               class="white--text align-end"
@@ -71,6 +83,9 @@
       </v-col>
     </v-row>
   </v-container>
+
+
+  </div>
 </template>
 
 <script>
@@ -81,6 +96,7 @@ export default {
       numDog: "25",
       
       
+      
   }),
   computed: {
     numDogs() {
@@ -89,6 +105,7 @@ export default {
   },
    
   methods: {
+  
     fetchDogs() {
       this.$store.dispatch('getRandomDogs')
     },
@@ -97,16 +114,18 @@ export default {
     },
     numberOfDogs() {
       
-      if (this.numDog === "25") {
-        return   this.$store.state.randomDogs.slice(0, 25)
+       if  (this.numDog === "infinite") {
+        return   this.$store.state.randomDogs 
       }
-      
+
       else if (this.numDog === "50") {
         return   this.$store.state.randomDogs.slice(0, 50)
       }
-      if (this.numDog === "infinite") {
-        return   this.$store.state.randomDogs.slice(0, 120)
+      
+      else if (this.numDog === "25") {
+        return   this.$store.state.randomDogs.slice(0, 25)
       }
+      
       
     }
   },
