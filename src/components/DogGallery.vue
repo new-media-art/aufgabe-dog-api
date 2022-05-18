@@ -3,7 +3,7 @@
     <h1>Random dogs</h1>
     <v-row>
       <v-col 
-      v-for="(dog, index) in $store.state.randomDogs" 
+      v-for="(dog, index) in numDogs" 
       :key="index" 
       cols="3">
       <v-card>
@@ -36,8 +36,13 @@ export default {
   name: "DogGallery",
 
   data: () => ({
-
+      numDog: 1
   }),
+  computed: {
+    numDogs() {
+      return this.numberOfDogs()
+    }
+  },
    
   methods: {
     fetchDogs() {
@@ -46,6 +51,16 @@ export default {
     addToFavorites (dog) {
       this.$store.dispatch('addToFavorites',  dog )
     },
+    numberOfDogs() {
+      if (this.numDog === 1) {
+        return   this.$store.state.randomDogs
+      }
+      if (this.numDog === 2) {
+        return   this.$store.state.randomDogs.slice(0, 3)
+      }
+      
+      
+    }
   },
   mounted () {
     this.fetchDogs()
