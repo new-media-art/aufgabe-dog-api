@@ -18,12 +18,12 @@
             >
               <v-radio
                 label="25 Dogs"
-                color="red"
+                color="yellow"
                 value= "25"
               ></v-radio>
               <v-radio
-                label="50 Dogs"
-                color="red darken-3"
+                label="blue"
+                color="green"
                 value="50"
               ></v-radio>
               <v-radio
