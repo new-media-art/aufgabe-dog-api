@@ -47,7 +47,7 @@ export default new Vuex.Store({
   },
   actions: {
     getRandomDogs({ commit }) {
-      fetch("https://dog.ceo/api/breeds/image/random/20")
+      fetch("https://dog.ceo/api/breeds/image/random/100")
         .then((response) => response.json())
         .then((data) => {
           commit("SET_RANDOM_DOGS", data.message);

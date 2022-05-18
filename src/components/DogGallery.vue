@@ -1,6 +1,48 @@
 <template>
   <v-container>
     <h1>Random dogs</h1>
+<!--radio-->
+
+  <v-card flat>
+    <v-card-text>
+      <v-container fluid>
+        <v-row>
+          <v-col
+            cols="12"
+            sm="6"
+            md="6"
+          >
+            <v-radio-group
+              v-model="numDog"
+              column
+            >
+              <v-radio
+                label="25 Dogs"
+                color="red"
+                value= "25"
+              ></v-radio>
+              <v-radio
+                label="50 Dogs"
+                color="red darken-3"
+                value="50"
+              ></v-radio>
+              <v-radio
+                label="Infinite Dogs"
+                color="indigo"
+                value="infinite"
+              ></v-radio>
+            </v-radio-group>
+          </v-col>
+         
+          
+        </v-row>
+      </v-container>
+    </v-card-text>
+  </v-card>
+
+
+
+
     <v-row>
       <v-col 
       v-for="(dog, index) in numDogs" 
@@ -36,7 +78,9 @@ export default {
   name: "DogGallery",
 
   data: () => ({
-      numDog: 1
+      numDog: "25",
+      
+      
   }),
   computed: {
     numDogs() {
@@ -52,12 +96,18 @@ export default {
       this.$store.dispatch('addToFavorites',  dog )
     },
     numberOfDogs() {
-      if (this.numDog === 1) {
+      if (this.numDog === "infinite") {
         return   this.$store.state.randomDogs
       }
-      if (this.numDog === 2) {
-        return   this.$store.state.randomDogs.slice(0, 3)
+      else if (this.numDog === "50") {
+        return   this.$store.state.randomDogs.slice(0, 50)
       }
+      else if (this.numDog === "25") {
+        return   this.$store.state.randomDogs.slice(0, 25)
+      }
+    else {
+      return this.$store.state.randomDogs
+    }
       
       
     }
