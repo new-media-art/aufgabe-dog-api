@@ -196,12 +196,19 @@ export default {
   computed: {
     numDogs() {
       return this.numberOfDogs();
-    },
+    }
   },
+ 
 
   methods: {
     onScroll (e) {
         this.offsetTop = e.target.scrollTop
+        if (this.offsetTop > 1000 && this.offsetTop < 1020) {
+         this.fetchModeDogs()
+        }
+      },
+      fetchModeDogs() {
+       console.log("hey")
       },
     fetchDogs() {
       this.$store.dispatch("getRandomDogs");
