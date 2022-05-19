@@ -11,6 +11,7 @@
       {{ offsetTop }}
     </v-row>
     <v-container
+    fluid
       id="scroll-target"
       style="max-height: 100vh"
       class="overflow-y-auto "
@@ -74,13 +75,16 @@
       :key="index" 
       cols="3">
       <v-card
-      
+      :loading="loading"
+    class="mx-auto my-12"
+    max-width="374"
       >
            <v-img
               :src="dog"
               class="white--text align-end"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="300px"
+              
             >
              <v-card-title class="text-uppercase">{{ $store.getters.concatDogBreed[index] }} </v-card-title>
              

@@ -1,7 +1,7 @@
 
  
   <template>
- <v-container>
+ 
  <v-card
  class="pa-2"
   >
@@ -40,7 +40,7 @@
     </v-row>
   </v-card>
    
- </v-container>
+
 
  
 
