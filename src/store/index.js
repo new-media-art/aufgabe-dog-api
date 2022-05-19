@@ -1,3 +1,4 @@
+
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -8,6 +9,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     randomDogs: [],
+    moreDogs: [],
     dogBreed: [],
     dogList: [],
     oneBreed: [],
@@ -18,10 +20,21 @@ export default new Vuex.Store({
     favoriteDogs(state) {
       return state.favorites;
     },
+    concatDogs(state) {
+      
+      state.randomDogs = state.randomDogs.concat(state.moreDogs) 
+      return state.randomDogs
+      
+    }
+
   },
   mutations: {
     SET_RANDOM_DOGS(state, payload) {
       state.randomDogs = payload;
+    },
+    SET_MORE_DOGS(state, payload) {
+      state.moreDogs = payload;
+      console.log("get more3")
     },
     SET_DOG_BREED(state, payload) {
       state.dogBreed = payload;
@@ -47,7 +60,7 @@ export default new Vuex.Store({
   },
   actions: {
     getRandomDogs({ commit }) {
-      fetch("https://dog.ceo/api/breeds/image/random/100")
+      fetch("https://dog.ceo/api/breeds/image/random/50")
         .then((response) => response.json())
         .then((data) => {
           commit("SET_RANDOM_DOGS", data.message);
@@ -60,6 +73,15 @@ export default new Vuex.Store({
           });
 
           this.commit("SET_DOG_BREED", dogBreed);
+        });
+    },
+    getMoreDogs({ commit }) {
+      fetch("https://dog.ceo/api/breeds/image/random/20")
+        .then((response) => response.json())
+        .then((data) => {
+          commit("SET_MORE_DOGS", data.message);
+          console.log("get more2")
+
         });
     },
 
