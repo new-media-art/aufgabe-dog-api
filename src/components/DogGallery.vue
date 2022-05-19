@@ -82,7 +82,7 @@
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
               height="300px"
             >
-             <v-card-title class="text-uppercase">{{ $store.state.dogBreed[index] }} </v-card-title>
+             <v-card-title class="text-uppercase">{{ $store.getters.concatDogBreed[index] }} </v-card-title>
              
             </v-img>
 
@@ -109,10 +109,8 @@ export default {
 
   data: () => ({
       numDog: "25",
-      offsetTop: 0,
-      
-      
-      
+      offsetTop: 1000,
+           
   }),
   computed: {
     numDogs() {
@@ -121,12 +119,9 @@ export default {
       
     } 
   },
- 
-
   methods: {
     onScroll (e) {
         this.offsetTop = e.target.scrollTop
-         
         
        if (this.offsetTop === 1000) {
          return this.fetchModeDogs()
@@ -146,6 +141,7 @@ export default {
        else if (this.offsetTop === 6000) {
          return this.fetchModeDogs()
        }
+       
 
 },
       

@@ -1,5 +1,5 @@
 <template>
-<div class="x">
+<div>
    <v-app>
     <app-bar />
 
@@ -46,14 +46,5 @@ data () {
 #dogsTitle {
   margin-left: 33%;
 }
-html {
-  overflow: hidden !important;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
 
-html::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
 </style>

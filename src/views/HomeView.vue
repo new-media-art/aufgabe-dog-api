@@ -1,5 +1,5 @@
 <template>
-<div class="x">
+<div>
   <dogs-breed />
    
   <dog-gallery />
@@ -28,5 +28,5 @@ export default {
 };
 </script>
 <style scoped>
-  
+
 </style>

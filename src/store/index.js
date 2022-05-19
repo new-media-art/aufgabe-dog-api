@@ -11,6 +11,7 @@ export default new Vuex.Store({
     randomDogs: [],
     moreDogs: [],
     dogBreed: [],
+    moreDogBreed: [],
     dogList: [],
     oneBreed: [],
     oneBreedName: [],
@@ -24,7 +25,12 @@ export default new Vuex.Store({
       
       state.randomDogs = state.randomDogs.concat(state.moreDogs) 
       return state.randomDogs
+
       
+    },
+    concatDogBreed(state){
+      state.dogBreed = state.dogBreed.concat(state.moreDogBreed)
+      return state.dogBreed
     }
 
   },
@@ -38,6 +44,9 @@ export default new Vuex.Store({
     },
     SET_DOG_BREED(state, payload) {
       state.dogBreed = payload;
+    },
+    SET_More_DOG_BREED(state, payload){
+      state.moreDogBreed = payload;
     },
     SET_DOG_LIST(state, payload) {
       state.dogList = payload;
@@ -81,6 +90,15 @@ export default new Vuex.Store({
         .then((data) => {
           commit("SET_MORE_DOGS", data.message);
           console.log("get more2")
+
+          let moreDogBreed = [];
+
+          data.message.forEach((dog1) => {
+            let x = dog1.split("/");
+            moreDogBreed.push(x[4]);
+          });
+
+          this.commit("SET_More_DOG_BREED", moreDogBreed);
 
         });
     },
